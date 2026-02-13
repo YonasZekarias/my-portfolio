@@ -162,7 +162,7 @@ export default function Portfolio() {
               // WELCOME PLAYER ONE
             </motion.p>
             <h1 className="text-5xl md:text-7xl font-black mb-4 uppercase tracking-tighter">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-800">Yonas</span> <br/>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-purple-800">Yonas</span> <br/>
               <span className="text-white">Zekarias</span>
             </h1>
             <p className="text-muted text-lg mb-8 max-w-xl border-l-2 border-primary pl-4">
@@ -330,7 +330,7 @@ export default function Portfolio() {
             {XP_LOG.map((log, i) => (
               <div key={i} className="relative pl-8">
                 {/* Timeline Node */}
-                <div className="absolute -left-[9px] top-0 w-4 h-4 bg-background border-2 border-secondary rounded-full" />
+                <div className="absolute -left-2.25 top-0 w-4 h-4 bg-background border-2 border-secondary rounded-full" />
                 
                 <h4 className="text-xl font-bold">{log.company}</h4>
                 <p className="text-secondary text-sm font-mono mb-2">{log.date} // {log.role}</p>
