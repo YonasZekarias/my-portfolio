@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #030712;
+  --color-surface: #111827;
+  --color-primary: #818cf8;
+  --color-secondary: #2dd4bf;
+  --color-accent: #f43f5e;
+  --color-text: #f3f4f6;
+  --color-muted: #9ca3af;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* --- OPTIMIZED PARTICLES (CPU Friendly) --- */
+
+/* Snow: Falls with sway */
+@keyframes snowfall-complex {
+  0% { transform: translate(0, -10px); opacity: 0; }
+  20% { opacity: 1; }
+  50% { transform: translate(-15px, 50px); }
+  75% { transform: translate(15px, 100px); }
+  100% { transform: translate(0, 150px); opacity: 0; }
+}
+.snowflake {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: snowfall-complex linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Embers: Rise with sway and scale pulse */
+@keyframes ember-rise-complex {
+  0% { transform: translate(0, 20px) scale(1); opacity: 0; }
+  20% { opacity: 1; }
+  50% { transform: translate(-10px, -40px) scale(1.5); }
+  100% { transform: translate(5px, -100px) scale(0); opacity: 0; }
+}
+.ember {
+  position: absolute;
+  background: #f59e0b;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 6px #ef4444;
+  animation: ember-rise-complex linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Dragon Pulse Glow */
+@keyframes dragon-pulse {
+  0%, 100% { box-shadow: inset 0 0 20px rgba(249, 115, 22, 0.1); }
+  50% { box-shadow: inset 0 0 60px rgba(249, 115, 22, 0.4); }
+}
+.dragon-glow { animation: dragon-pulse 3s ease-in-out infinite; }
+
+@keyframes winter-pulse {
+  0%, 100% { box-shadow: inset 0 0 20px rgba(34, 211, 238, 0.1); }
+  50% { box-shadow: inset 0 0 60px rgba(34, 211, 238, 0.3); }
+}
+.winter-glow { animation: winter-pulse 4s ease-in-out infinite; }
+
+/* Existing Equalizer */
+@keyframes bounce-rhythm {
+  0%, 100% { height: 40%; opacity: 0.5; }
+  50% { height: 90%; opacity: 1; }
+}
+.equalizer-bar {
+  width: 100%;
+  border-radius: 4px;
+  background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+  animation: bounce-rhythm 1.2s ease-in-out infinite;
+  transform-origin: bottom;
+  will-change: transform; 
+}
+.equalizer-bar:nth-child(odd) { animation-duration: 1.5s; animation-delay: 0.2s; }
+.equalizer-bar:nth-child(2n) { animation-duration: 1.1s; animation-delay: 0.5s; }
+
+/* Aurora BG (Static transform is cheaper than animating gradients) */
+.aurora-bg {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
+  background: radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.08), transparent 25%), 
+              radial-gradient(circle at 85% 30%, rgba(45, 212, 191, 0.05), transparent 25%);
+  filter: blur(60px); opacity: 0.6;
+  transform: translateZ(0); /* Hardware acceleration */
+}
+@keyframes snow {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(400px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes ember {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-400px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes equalizer {
+  0%, 100% { height: 20%; }
+  50% { height: 100%; }
+}
+
+.animate-snow {
+  animation: snow linear infinite;
+}
+
+.animate-ember {
+  animation: ember linear infinite;
+}
+
+.animate-equalizer {
+  animation: equalizer 0.8s ease-in-out infinite;
+}
