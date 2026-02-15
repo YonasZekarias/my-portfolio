@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { FileText } from 'lucide-react';
+import { Logo } from './Logo'; 
 
 const NAV_LINKS = [
   { name: "About", href: "#about" },
@@ -22,9 +23,15 @@ export const Navbar = () => {
   return (
     <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-linear-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center font-black text-white text-xs">YZ</div>
-          <span className="font-bold text-white tracking-tight hidden md:block">Yonas Zekarias</span>
+        
+        {/* NEW LOGO SECTION */}
+        <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo(0,0)}>
+          <div className="transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+             <Logo className="w-10 h-10 md:w-12 md:h-12" />
+          </div>
+          <span className="font-bold text-white tracking-tight hidden md:block group-hover:text-cyan-400 transition-colors">
+            Yonas Zekarias
+          </span>
         </div>
         
         <div className="flex items-center gap-8">
@@ -36,7 +43,6 @@ export const Navbar = () => {
             ))}
             </ul>
             
-            {/* CV Download Button in Nav */}
             <a 
                 href="/resume.pdf" 
                 target="_blank" 

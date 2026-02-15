@@ -10,7 +10,7 @@ const PROJECTS = [
     category: "System Architecture", 
     desc: "A centralized campus logistics platform designed to streamline food ordering for over 5,000 students.", 
     stack: ["Next.js", "Socket.io", "MongoDB"],
-    videoSrc: "/astu-demo.mov",
+    videoSrc: "/astu-demo.mp4",
     githubUrl: "https://github.com/YonasAdane/ASTU-food-delivery-system" 
   },
   { 
@@ -19,7 +19,7 @@ const PROJECTS = [
     category: "E-Commerce Engine", 
     desc: "A comprehensive digital marketplace solution featuring secure payments and inventory management.", 
     stack: ["React", "Redux", "Stripe"],
-    videoSrc: "/yexpress-demo.mov",
+    videoSrc: "/yexpress-demo.mp4",
     githubUrl: "https://github.com/YonasZekarias/YExpress" 
   },
   { 
@@ -28,7 +28,7 @@ const PROJECTS = [
     category: "Developer Tool", 
     desc: "A lightweight, AI-powered utility designed to analyze code changes and automatically generate clean, semantic Git commit messages.", 
     stack: ["Next.js", "Express", "AI Integration"],
-    videoSrc: "/ai-demo.mov",
+    videoSrc: "/ai-demo.mp4",
     githubUrl: "https://github.com/YonasZekarias/AI-commit-message-generator" 
   }
 ];
