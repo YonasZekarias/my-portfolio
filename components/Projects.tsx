@@ -30,7 +30,16 @@ const PROJECTS = [
     stack: ["Next.js", "Express", "AI Integration"],
     videoSrc: "/ai-demo.mp4",
     githubUrl: "https://github.com/YonasZekarias/AI-commit-message-generator" 
-  }
+  },
+  {
+    id:4,
+    title: "Snippets",
+    category: "Code Repository",
+    desc: "A web-based code snippet manager that allows developers to save, organize, and share reusable code snippets across projects.",
+    stack: ["React.js", "MaterialUI", "Django"],
+    videoSrc: "/snippets-demo.mp4",
+    githubUrl: "https://github.com/YonasZekarias/Snippets"
+  },
 ];
 
 export const Projects = () => {
