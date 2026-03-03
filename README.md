@@ -23,7 +23,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Live Demo
 
-Visit the deployed site here:  
+Visit the live deployed site here:  
 https://my-portfolio-yonaszekarias.vercel.app/
 
 ## Features
